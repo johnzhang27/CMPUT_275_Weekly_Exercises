@@ -1,0 +1,45 @@
+Name: YongQuan Zhang
+ID #: 1515873
+CMPUT 275 Winter20
+
+Weekly Exercise #4: Dynamic Hashing
+
+
+Included Files:
+
+	- exercise4.cpp
+
+	- hash_table.h
+	
+	- linked_list.h
+
+	- Makefile
+
+	- README
+
+Accessorise:
+	None.
+
+Wiring instructions: 
+	None.
+
+
+Running the code:
+You should put exercise4.cpp, hash_table.h and linked_list.h into a file that contains 
+- Makefile(specific makefile made for this exercise.)
+1. Go to the terminal and type "make" to make 1 excutable files for exercise4.cpp called exercise4. It will create exercise4.o as well.
+2. Type "make exercise4.o" could make the .o file which is the intermedian file for the excutable file.
+3. You could type "make clean" to delete all excutable files.
+
+Notes and Assumptions:
+	I only modified the hash_table.h:
+
+	1. I created the void reSize() function to resize tableSize and create a new array of linked list(temptable). Then I copy the items in old table and inset them into the new table. After this, delete the old table and set the pointer of the old table to the pointer of the new table. NOTE: I reset the tablesize several times because I think this is the best way to avoid modifing or adding other functions. Another way to do it is create a new unsigned int gettempbucket(......) function
+	to get bucket by using temptablesize. The two methods will give the same output.
+
+	2. Since the assignment description said "whenever the number of items is less then 1/4 of the number of buckets". So we resize the tablesize when we do insertion as well.
+
+	3. I add a default size to the constructor of the hashtable to 10.
+
+	4. When you pass a tablesize that is less than or equal to 0, the program will quit and show error message "Assertion 'tableSize > 0' failed."
+
