@@ -1,0 +1,43 @@
+Name: YongQuan Zhang
+ID #: 1515873
+CMPUT 275 Winter20
+
+Weekly Exercise #3: Pseudocode to Code
+
+
+Included Files:
+
+	- flipflop.cpp: Contains 2 functions:
+void flipFlopSort(uint32_t a[], int m, int startlocation),
+int main().
+	-textmatch.cpp: Contains 2 functions:
+void textMatch(const char *s, const char *t),
+int main().
+	- Makefile
+
+	- README
+
+Accessorise:
+	None.
+
+Wiring instructions: 
+	None.
+
+
+Running the code:
+You should put flipflop.cpp and textmatch.cpp into a file that contains 
+- Makefile(specific makefile made for this exercise.)
+1. Go to the terminal and type "make" to make 2 excutable files for both flipflop and textmatch.
+2. Or you could type "make flipflop" or "make textmatch" to make excutable file each of them.
+3. Type "make flipflop.o" or "make textmatch.o" could make the .o files which is the intermedian file for the excutable file.
+4. You could type "make clean" to delete all excutable files.
+
+Notes and Assumptions:
+	flipflop.cpp: Contains 2 functions:
+	1. void flipFlopSort(uint32_t a[], int m, int startlocation) is for the sorting algorithm.
+	2. main() is needed to excute other functions.
+	textmatch.cpp: Also contains 2 functions:
+	1. textMatch(const char *s, const char *t) is from the pseudocode and is used to determine  	  	whether the 1st line of input apeared in the second line of input or not. Also cout the apeared
+	index.
+	2. main() is needed to excute other functions.
+

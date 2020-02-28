@@ -1,0 +1,60 @@
+Name: YongQuan Zhang
+ID #: 1515873
+CMPUT 275 Winter20
+
+Weekly Exercise #1: Display and Joystick
+
+
+Included Files:
+
+	- joy_cursor.cpp: Contains the 4 functions: 
+void setup(),
+void redrawCursor(uint16_t colour),
+void processJoystick(),
+int main().
+
+	- Makefile
+
+	- README
+
+Accessorise:
+	* 1 Arduino Mega Board(AMG)
+	* Breadboard
+	* 7 wires
+	* USB cable
+	* joystick
+	* touchscreen
+	* A custome SD card provided by instructor
+
+Wiring instructions: 
+	Touchscreen connect with Arduino Mega Board(insert left side of the touchscreen from Pin 3.3V to
+	Pin A5. Insert the right side of the touchscreen from Pin AREF to Pin RX0<-0.
+	Arduino's Pin A8 <--> VRy of joystick.
+	Arduino's Pin A9 <--> VRx of joystick.
+	Arduino's Pin 5v <--> "+" on breadboard <--> +5V on joystick.
+	Arduino's Pin GND <--> "-" on breadboard <--> GND on joystick.
+	Arduino's Pin 53 <--> SW on joystick.
+	Insert the SD card into touchscreen.
+
+
+Running the code:
+You should put joy_cursor.cpp into a file that contains 
+- Makefile
+- lcd_image.cpp
+- lcd_image.h
+1. Connect Arduino Mega Boards and other necessary parts of this exercise.
+
+2. Go to the terminal and type "make", then "make upload" to upload the made file to Arduino Mega Board.
+Then play with the joystick and check display of serial monitor.
+
+Notes and Assumptions:
+	joy_cursor.cpp: Contains the 4 functions:
+
+setup() doesn't have argument and return nothing(None).
+
+void redrawCursor(uint16_t colour) will redraw a cursor with the colour you want. Its argument is the colour.
+
+void processJoystick() will help to move the cursor on Edmonton map without leaving a trace behind. It will also determine whether the cursor is moving or not. The function has no argument and retuen nothing.
+
+main() is needed to excute other functions.
+

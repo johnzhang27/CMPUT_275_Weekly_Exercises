@@ -1,0 +1,61 @@
+Name: YongQuan Zhang
+ID #: 1515873
+CMPUT 275 Winter20
+
+Weekly Exercise #2: Restaurants and Pointer
+
+
+Included Files:
+
+	- get_restaurant.cpp: Contains the 8 functions:
+struct restaurant(more like assignning memory for variables), 
+void setup(),
+void getRestaurant(int restIndex, restaurant* restPtr),
+void getRestaurantFast(int restIndex, restaurant* restPtr),
+int processTOUCHSCREEN(),
+void SLOWwriteonTOUCHSCREEN(uint32_t time_slow2, uint32_t A_slow),
+void FASTwriteonTOUCHSCREEN(uint32_t time_fast2, uint32_t A_fast),
+int main().
+
+	- Makefile
+
+	- README
+
+Accessorise:
+	* 1 Arduino Mega Board(AMG)
+	* USB cable
+	* touchscreen
+	* A custome SD card provided by instructor
+
+Wiring instructions: 
+	Touchscreen connect with Arduino Mega Board(insert left side of the touchscreen from Pin 3.3V to
+	Pin A5. Insert the right side of the touchscreen from Pin AREF to Pin RX0<-0.
+
+	Insert the SD card into touchscreen.
+
+
+Running the code:
+You should put get_restaurant.cpp into a file that contains 
+- Makefile
+1. Connect Arduino Mega Boards and other necessary parts of this exercise.
+
+2. Go to the terminal and type "make", then "make upload" to upload the made file to Arduino Mega Board.
+Then touch the SLOW and FAST buttons and check display.
+
+Notes and Assumptions:
+	get_restaurant.cpp: Contains the 8 functions:
+
+struct restaurant is more like assignning space for variables.
+
+setup() doesn't have argument and return nothing(None).
+
+void getRestaurant(int restIndex, restaurant* restPtr) well get all 1066 restaurants by a slow way.
+
+void getRestaurantFast(int restIndex, restaurant* restPtr) will get all 1066 restaurants without getting a block each time. The function will check if the block number is same as previous one then decide to get a new block or not.
+
+int processTOUCHSCREEN(),
+void SLOWwriteonTOUCHSCREEN(uint32_t time_slow2, uint32_t A_slow),
+and void FASTwriteonTOUCHSCREEN(uint32_t time_fast2, uint32_t A_fast) will help to change the display on tft.
+
+main() is needed to excute other functions.
+
