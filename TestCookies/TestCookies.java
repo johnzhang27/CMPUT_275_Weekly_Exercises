@@ -32,7 +32,7 @@ public class TestCookies {
         // String label = "[A-Za-z]([A-Za-z\\d\\-]*[A-Za-z\\d])*";
         String label             = "[\\p{Alpha}]([\\p{Alnum}\\-]*\\p{Alnum})*";
         String domain            = String.format("(%s)*(\\.%s)*",label, label);
-        String domainav          =String.format("(Domain=%s)", domain);
+        String domainav          = String.format("(Domain=%s)", domain);
         String maxageav          = "Max-Age=[1-9][\\d]*";
         String time              = "\\d{2}:\\d{2}:\\d{2}";
         String wkday             = "(Mon|Tue|Wed|Thu|Fri|Sat|Sun)";
