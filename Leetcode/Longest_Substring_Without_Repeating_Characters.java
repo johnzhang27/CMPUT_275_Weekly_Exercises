@@ -1,70 +1,28 @@
+import java.util.HashSet;
+import java.util.Set;
 class Solution {
-    private int testindex = 0;
-    private int recheckindex;
-    private String[] temptest = new String[26];
-    private boolean check(String test){
-        for(int i = 0; i< testindex;i++){
-            System.out.println(temptest[i]);
-            if(temptest[i].equals(test)){
-                System.out.println("existed");
-                temptest = new String[26];
-                recheckindex = testindex;
-                testindex = 0;
-                return false;
-            }
-        }
-        temptest[testindex] = test;
-        testindex++;
-        System.out.println("no match");
-        return true;
-    }
     public int lengthOfLongestSubstring(String s) {
-        String[] arrayofstr = s.split("");
-        /*
-        for(String ss: arrayofstr){
-            System.out.println(ss);
-        }
-        */
-        int counter = 0;
+        Set<Character> checklist = new HashSet<Character>();
+        int head = 0;
+        int tail = 0;
         int max = 0;
-        for(int i = 0;i<s.length();i++){
-            System.out.println("test input: "+arrayofstr[i]);
-            if(check(arrayofstr[i])){
-                counter++;
-                if(counter > max){
-                    max = counter;
+        while(head < s.length()){
+            if(!checklist.contains(s.charAt(head))){
+                checklist.add(s.charAt(head));
+                head++;
+                if(checklist.size()>max){
+                    max = checklist.size();
                 }
             }
             else{
-                if(counter > max){
-                    max = counter;
-                }
-                counter = 0;
-                //System.out.println("Recheck: "+ arrayofstr[i]);
-                for(int j = 0;j<recheckindex;j++){
-                    System.out.println("Recheck: "+ arrayofstr[i-j]);
-                    if(check(arrayofstr[i-j])){
-                        counter++;
-                    }
-                    else{
-                        counter = 0;
-                        for(int k = (i-recheckindex+1);k<=i;k++){
-                        System.out.println("Recheck: "+ arrayofstr[k]);
-                        check(arrayofstr[k]);
-                        counter++;    
-                        }
-                        //System.out.println("Recheck: "+ arrayofstr[i]);
-                        //check(arrayofstr[i]);
-                        //counter++;
-                    }
-                }
+                checklist.remove(s.charAt(tail));
+                tail++;
             }
-            
         }
-        //System.out.println(max);
         return max;
     }
 }
+
 public class Longest_Substring_Without_Repeating_Characters {
     public static void main(String[] args){
         Solution a = new Solution();
