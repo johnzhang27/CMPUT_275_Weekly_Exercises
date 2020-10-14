@@ -58,6 +58,7 @@ public class DaysOld {
         days("3000-1-1");           // This is a wrong birthday
         // Add your birthday
         days("1996-5-27");
+        days("2000-6-31");
     }
 
 }
