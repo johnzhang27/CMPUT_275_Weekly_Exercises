@@ -19,6 +19,7 @@ class SyntaxError extends Exception {
         super(msg);
     }
 }
+
 @SuppressWarnings("serial")
 class RuntimeError extends Exception {
     /**
