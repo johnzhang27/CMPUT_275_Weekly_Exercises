@@ -15,7 +15,7 @@ class SyntaxError extends Exception {
     /**
      * Constructor which create a new syntax error exception
      */
-    public SyntaxError(String msg) {
+    public SyntaxError(String msg){
         super(msg);
     }
 }
